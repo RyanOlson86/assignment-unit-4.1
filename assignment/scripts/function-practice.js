@@ -48,15 +48,15 @@ function isPositive(number) {
 
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
-console.log('Is 7 positive?', isPositive(7));
-console.log('Is 0 positive?', isPositive(0));
-console.log('Is -3 positive?', isPositive(-3));
+console.log("Is 7 positive?", isPositive(7));
+console.log("Is 0 positive?", isPositive(0));
+console.log("Is -3 positive?", isPositive(-3));
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 function getLast(array) {
   //console.log('Testing array;', array); //used for bug testing
-  if (array.length>0){
+  if (array.length > 0) {
     //console.log(array.length); //used for bug testing
     return array[array.length - 1];
   } else {
@@ -64,14 +64,30 @@ function getLast(array) {
   }
 }
 
-console.log('If last item of array should be 3:', getLast([1,2,3]));
-console.log('If last item of array should be "Ryan":', getLast(['John', 'Ryan']));
-console.log('If last item of array is empty:', getLast([]));
+console.log("If last item of array should be 3:", getLast([1, 2, 3]));
+console.log(
+  'If last item of array should be "Ryan":',
+  getLast(["John", "Ryan"])
+);
+console.log("If last item of array is empty:", getLast([]));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-function find(value, array) {}
+function find(value, array) {
+  let answer = false;
+  for (let search of array) {
+    // console.log("search", search); // console log for debugging
+    if (search === value) {
+      answer = true;
+    }// end if statement
+  } // end for loop
+  return answer;
+}
+
+console.log("Is 6 in the array? Should be true", find(6, [2, 3, 4, 5, 6, 7, 8]));
+console.log("Is 6 in the array? Should be False", find(6, [2, 3, 4, 5, 7, 8]));
+console.log('Is "Ryan" in the array? Should be true', find('Ryan', ['Bryon', 'Ryan', 'John']));
 
 // ----------------------
 // Stretch Goals
