@@ -94,7 +94,16 @@ console.log('Is "Ryan" in the array? Should be true', find('Ryan', ['Bryon', 'Ry
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {}
+function isFirstLetter(letter, string) {
+  if(string[0]===letter){
+    return true;
+  } else {
+    return false;
+  }
+} // can access letters of strings like an array
+
+console.log("A the first letter Apple", isFirstLetter('A', 'Apple'));
+console.log("B the first letter Apple", isFirstLetter('B', 'Apple'));
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
